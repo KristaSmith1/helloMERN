@@ -42,9 +42,7 @@ recordRoutes.route("/record/add").post(async (req, res) => {
     try {
         let db_connect = dbo.getDb();
         let myobj = {
-            name: req.body.name,
-            position: req.body.position,
-            level: req.body.level,
+            teamName: req.body.teamName
         };
         const result = db_connect.collection("records").insertOne(myobj);
         res.json(result);
@@ -60,9 +58,7 @@ recordRoutes.route("/update/:id").put(async (req, res) => {
         let myquery = { _id: new ObjectId(req.params.id) };
         let newvalues = {
             $set: {
-                name: req.body.name,
-                position: req.body.position,
-                level: req.body.level,
+                teamName: req.body.teamName
             },
         };
         const result = db_connect.collection("records").updateOne(myquery, newvalues);
