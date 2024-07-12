@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 // One React component for the entire table (Records)
 // Another React component for each row of the result set (Record)
@@ -18,7 +17,6 @@ export default function RecordList() {
             // connect to address in config.env file
             const response = await fetch(`http://localhost:4000/record/`);
 
-            console.log("we have fetched");
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
