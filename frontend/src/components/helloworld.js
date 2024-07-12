@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 // One React component for the entire table (Records)
 // Another React component for each row of the result set (Record)
 
-const Record = (props) => (
+
+const HelloWorld = (props) => (
     <div>{props.record.teamName}</div>
 );
 
@@ -34,9 +35,10 @@ export default function RecordList() {
     function recordList() {
         return records.map((record) => {
             return (
-                <Record record={record}
+                <HelloWorld record={record}
                     key={record._id}
                 />
+
             )
         })
     }
@@ -45,10 +47,11 @@ export default function RecordList() {
 
     return (
         <div>
-            <h1>Hello World!!</h1>
+            <h1>Hello World!! From Team: </h1>
             <div>
                 {recordList()}
             </div>
         </div>
     )
 }
+
