@@ -1,1 +1,13 @@
-// Hello World
+// Hello world - index.js
+import React from 'react';
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
+)
